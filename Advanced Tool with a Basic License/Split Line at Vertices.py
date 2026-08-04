@@ -23,6 +23,8 @@ import arcpy
 ##
 ########################################################################################
 
+## Watch the video: https://youtu.be/RpgOv5iZQmo
+
 ## 🤗 Support content creation 👉 https://buymeacoffee.com/glenbambrick
 
 ########################################################################################
