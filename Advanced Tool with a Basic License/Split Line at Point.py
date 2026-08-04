@@ -1,6 +1,6 @@
 import arcpy
 
-################################################################################
+########################################################################################
 ## Esri Documentation:
 ##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/split-line-at-point.htm
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/functions/getparameterastext.html
@@ -20,12 +20,12 @@ import arcpy
 ## Original tool syntax:
 ##      arcpy.management.SplitLineAtPoint(in_features, point_features, out_feature_class, {search_radius})
 ##
-################################################################################
+########################################################################################
 
 ## 🤗 Support content creation 👉 https://buymeacoffee.com/glenbambrick
 
-################################################################################
-## USER INPUTS #################################################################
+########################################################################################
+## USER INPUTS #########################################################################
 
 ## Linear feature class to split
 in_features = arcpy.GetParameterAsText(0)
@@ -39,8 +39,8 @@ out_feature_class = arcpy.GetParameterAsText(2)
 ## snap points within distance to closest point on the line
 search_radius = arcpy.GetParameterAsText(3)
 
-################################################################################
-## TOOL OBJECT REQUIREMENTS ####################################################
+########################################################################################
+## TOOL OBJECT REQUIREMENTS ############################################################
 
 ## srs id of the in_features to assign the same to the output
 srs_id = arcpy.da.Describe(in_features)["spatialReference"].factoryCode
@@ -78,8 +78,8 @@ segments_lst = []
 ## dictionary to hold the key: OID, value: vertice points for each line.
 points_dict = {}
 
-################################################################################
-## NEAR TABLE ##################################################################
+########################################################################################
+## NEAR TABLE ##########################################################################
 
 ## if no search_radius set we are interested in only one point, that is the point
 ## that is closest to the line
@@ -117,8 +117,8 @@ with arcpy.da.SearchCursor(
         else:
             points_dict[row[0]] = points_dict[row[0]] + [arcpy.PointGeometry(arcpy.Point(X = row[1], Y = row[2]))]
 
-################################################################################
-## SPLIT LINES #################################################################
+########################################################################################
+## SPLIT LINES #########################################################################
 
 ## search through each linear record
 with arcpy.da.SearchCursor(in_features, in_fld_names) as ln_cursor:
@@ -199,8 +199,8 @@ with arcpy.da.SearchCursor(in_features, in_fld_names) as ln_cursor:
             ## apend the information to the segments list.
             segments_lst.append(segment_attributes)
 
-################################################################################
-## CREATE OUPUT FEATURE CLASS ##################################################
+########################################################################################
+## CREATE OUPUT FEATURE CLASS ##########################################################
 
 ## create a linear feature class based from a template of teh original input
 temp_fc = arcpy.management.CreateFeatureclass(
@@ -213,8 +213,8 @@ temp_fc = arcpy.management.CreateFeatureclass(
     spatial_reference = srs_id
 )
 
-################################################################################
-## CREATE OUPUT FEATURE CLASS SCHEMA ###########################################
+########################################################################################
+## CREATE OUPUT FEATURE CLASS SCHEMA ###################################################
 
 ## add the ORIG_FID field
 arcpy.management.AddField(
@@ -238,8 +238,8 @@ in_fld_names.remove(oid_fld)
 in_fld_names.insert(0, "ORIG_FID")
 in_fld_names.append("ORIG_SEQ")
 
-################################################################################
-## INSERT THE DATA #############################################################
+########################################################################################
+## INSERT THE DATA #####################################################################
 
 with arcpy.da.InsertCursor(
     in_table = temp_fc,
@@ -248,19 +248,19 @@ with arcpy.da.InsertCursor(
     for attributes in segments_lst:
         i_cursor.insertRow(attributes)
 
-################################################################################
-## WRITE TO DISK ###############################################################
+########################################################################################
+## WRITE TO DISK #######################################################################
 
 arcpy.conversion.ExportFeatures(
     in_features = temp_fc,
     out_features = out_feature_class
 )
 
-################################################################################
-## CLEAN UP ####################################################################
+########################################################################################
+## CLEAN UP ############################################################################
 
 arcpy.management.Delete(
     in_data = [temp_fc, near_tbl]
 )
 
-################################################################################
+########################################################################################
