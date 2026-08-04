@@ -14,8 +14,8 @@ import arcpy
 ##  https://doc.esri.com/en/arcgis-pro/latest/help/analysis/geoprocessing/basics/the-in-memory-workspace.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/add-field.html?tabs=python
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/insertcursor-class.html
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/export-features.htm
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/delete.htm
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/conversion/export-features.html?tabs=python
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/delete.html?tabs=python
 ##
 ## Original tool syntax:
 ##      arcpy.management.SplitLineAtPoint(in_features, point_features, out_feature_class, {search_radius})
