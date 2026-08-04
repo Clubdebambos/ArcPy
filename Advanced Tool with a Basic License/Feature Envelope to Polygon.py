@@ -12,6 +12,7 @@ import arcpy
 ##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/add-field.html?tabs=python
 ##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/calculate-field.html?tabs=python
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/searchcursor-class.html
+##  https://doc.esri.com/en/arcgis-pro/latest/help/analysis/geoprocessing/basics/the-in-memory-workspace.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/classes/array.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/classes/polygon.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/updatecursor-class.html
@@ -221,8 +222,8 @@ elif single_envelope == "MULTIPART" and shape_type in ("Polygon", "Polyline"):
 
     ## save to disk
     arcpy.conversion.ExportFeatures(
-        in_features=memory_fc,
-        out_features=out_feature_class
+        in_features = memory_fc,
+        out_features = out_feature_class
 )
     ####################################################################################
     ## CLEAN-UP the MEMORY WORKSPACE
