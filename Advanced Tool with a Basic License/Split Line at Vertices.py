@@ -6,20 +6,17 @@ import arcpy
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/functions/getparameterastext.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/describe.html
 ##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/functions/listfields.html
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/get-count.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/setprogressorlabel.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/setprogressor.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/data-access/searchcursor-class.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/pointgeometry.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/point.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/polyline.htm
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/create-feature-class.htm
-##  https://pro.arcgis.com/en/pro-app/latest/help/analysis/geoprocessing/basics/the-in-memory-workspace.htm
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/add-field.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/data-access/insertcursor-class.htm
-##  https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/resetprogressor.htm
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/export-features.htm
-##  https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/delete.htm
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/get-count.html?tabs=python
+##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/searchcursor-class.html
+##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/classes/polyline.html
+##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/classes/pointgeometry.html
+##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/classes/point.html
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/create-feature-class.html?tabs=python
+##  https://doc.esri.com/en/arcgis-pro/latest/help/analysis/geoprocessing/basics/the-in-memory-workspace.html
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/add-field.html?tabs=python
+##  https://doc.esri.com/en/arcgis-pro/latest/arcpy/data-access/insertcursor-class.html
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/conversion/export-features.html?tabs=python
+##  https://doc.esri.com/en/arcgis-pro/latest/tool-reference/data-management/delete.html?tabs=python
 ##
 ## Original tool syntax:
 ##     arcpy.management.SplitLine(in_features, out_feature_class)
